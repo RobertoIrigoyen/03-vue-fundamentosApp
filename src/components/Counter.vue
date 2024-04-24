@@ -2,8 +2,9 @@
   <h2>{{ customTitle }}</h2>
   <p>{{ counter }} <sup>2</sup> = {{ getSquaredValue() }}</p>
   <p>{{ counter }} <sup>2</sup> = {{ squareCounter }}</p>
+  <p data-testID="counter">{{ counter }}</p>
 
-  <div>
+  <div class="buttons">
     <button @click="increase()">+1</button>
     <button v-on:click="decrease()">-1</button>
   </div>
