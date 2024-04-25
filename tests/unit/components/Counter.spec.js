@@ -1,5 +1,4 @@
 import { shallowMount, mount } from '@vue/test-utils'
-import Counter from '@/components/Counter'
 
 describe('Counter Component', () => {
   let wrapper
@@ -35,5 +34,23 @@ describe('Counter Component', () => {
     const value = wrapper.find('[data-testID="counter"]').text()
 
     expect(value).toBe('101')
+  })
+  test('debe de establecer el valor por defecto', () => {
+    const { start } = wrapper.props()
+
+    const value = wrapper.find('[data-testID="counter"]').text()
+
+    expect(Number(value)).toBe(start)
+  })
+  test('debe de mostrar la prop title', () => {
+    const title = 'Hola mundowi'
+
+    const wrapper = shallowMount(Counter, {
+      props: {
+        title
+      }
+    })
+
+    expect(wrapper.find('h2').text()).toBe(title)
   })
 })
