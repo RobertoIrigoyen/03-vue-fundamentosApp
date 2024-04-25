@@ -1,4 +1,5 @@
 import { shallowMount, mount } from '@vue/test-utils'
+import Counter from '@/components/Counter'
 
 describe('Counter Component', () => {
   let wrapper
@@ -47,7 +48,7 @@ describe('Counter Component', () => {
 
     const wrapper = shallowMount(Counter, {
       props: {
-        title
+        title,
       }
     })
 
